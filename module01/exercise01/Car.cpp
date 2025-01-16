@@ -20,7 +20,7 @@ Car::Car(const Car& other) : mMake(other.mMake), mModel(other.mModel), mYear{oth
 Car& Car::operator=(const Car& other) {
     cout << "The copy assignment operator is just called." << endl;
 
-    if (this != &other)
+    if (this != &other)                         // To avoid unnecessary copy when both memory addresses are same
     {
         mMake = other.mMake;
         mModel = other.mModel;
@@ -29,7 +29,7 @@ Car& Car::operator=(const Car& other) {
     return *this;
 }
 
-void Car::drive() const {
+void Car::drive() const {                       // Make constant function since the function is intended for read-only operation
     cout << "Make: " << mMake << "\nModel: " << mModel << "\nYear: " << mYear << endl;
 }
 
@@ -49,7 +49,7 @@ SportsCar::SportsCar(string make, string model, int year, double topspeed)
     cout << "And this is a sports car." << endl;
 }
 
-void SportsCar::drive() const {     // No override here. Just used function hiding.
+void SportsCar::drive() const {             // No override here. Just used function hiding. 
     Car::drive();
     cout << "Top speed: " << mTopSpeed << endl;
 }

@@ -20,7 +20,7 @@ Car::Car(const Car& other) : mMake(other.mMake), mModel(other.mModel), mYear{oth
 Car& Car::operator=(const Car& other) {
     cout << "The copy assignment operator is just called." << endl;
 
-    if (this != &other)
+    if (this != &other)                 // To avoid unnecessary copy when both memory addresses are same
     {
         mMake = other.mMake;
         mModel = other.mModel;

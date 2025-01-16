@@ -12,11 +12,11 @@ protected:
     
 public:
     // Declarations of member functions
-    Car();       // Default constructor
+    Car();                                                  // Default constructor
     Car(std::string make, std::string model, int year);     // Parameterized constructor
-    Car(const Car& car);        // Copy constructor
-    Car& operator=(const Car& car);     // Copy assignment operator override 
-    virtual void drive() const; // Virtual function for abstraction
-    ~Car();     // Destructor
+    Car(const Car& car);                                    // Copy constructor
+    Car& operator=(const Car& car);                         // Copy assignment operator override 
+    virtual void drive() const;                             // Virtual function for abstraction
+    ~Car();                                                 // Destructor
 };
 
